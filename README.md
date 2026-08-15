@@ -59,7 +59,7 @@ Ensure `~/.local/bin` is on your `PATH`. Repeat the build and install commands a
 
 ## How it is built
 
-The implementation is ordinary TypeScript using supported `node:*` APIs. ScriptC compiles it into a native macOS executable:
+The implementation is ordinary TypeScript using supported `node:*` APIs. [ScriptC](https://scriptc.dev/) compiles it into a native macOS executable:
 
 ```text
 src/main.ts
