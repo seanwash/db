@@ -1,0 +1,22 @@
+{
+  "name": "db-client-opener",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "build": "mkdir -p dist && scriptc build src/main.ts --no-keep-c -o dist/db",
+    "check": "tsc --noEmit",
+    "coverage": "scriptc coverage src/main.ts",
+    "test": "node --test tests/*.test.ts",
+    "test:native": "DB_TEST_BINARY=dist/db node --test tests/*.test.ts",
+    "verify": "npm run check && npm test && npm run coverage && npm run build && npm run test:native"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.1",
+    "scriptc": "0.0.26",
+    "typescript": "7.0.2"
+  }
+}
